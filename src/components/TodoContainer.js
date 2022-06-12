@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 import TodosList from './TodosList';
 import Header from './Header';
 import InputTodo from './InputTodo';
@@ -66,14 +66,16 @@ class TodoContainer extends PureComponent {
     render() {
       const { todos } = this.state;
       return (
-        <div>
-          <Header />
-          <InputTodo addTodoProps={this.addTodoItem} />
-          <TodosList
-            handleChangeProp={this.handleChange}
-            todos={todos}
-            deleteTodoProps={this.delTodo}
-          />
+        <div className="container">
+          <div className="inner">
+            <Header />
+            <InputTodo addTodoProps={this.addTodoItem} />
+            <TodosList
+              handleChangeProp={this.handleChange}
+              todos={todos}
+              deleteTodoProps={this.delTodo}
+            />
+          </div>
         </div>
       );
     }
